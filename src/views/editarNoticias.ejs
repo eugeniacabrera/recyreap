@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editar noticias</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+
+    <header>
+        <a class="btn btn-primary" href="/admin/adminNoticias" role="button">VOLVER</a>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-5 offset-md-3 card">
+                <div class="card-body">
+                    <form action="/admin/actualizarNoticias/<%= data.idNoticia %>" method="POST">
+                        <div class="form-group">
+                            <input type="text" name='titulo' value="<%= data.titulo %>" class='form-control' autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name='contenido' value="<%= data.contenido %>" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name='imagen' value="<%= data.imagen %>" class="form-control" autofocus>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="submit" value="Editar noticia" class='btn btn-primary btn-block'>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <%include partials/footer.ejs %>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Galería</title>
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+    <header>
+        <% if(!isAuthenticated){ %>
+            <%include partials/navigation.ejs%>
+                <% } %>
+                    <% if(isAuthenticated && user.rol=== "Administrador"){ %>
+                        <%include partials/navLogInAdmin.ejs%>
+                            <% } %>
+                                <% if(isAuthenticated && user.rol !== "Administrador"){ %>
+                                    <% include partials/navLogIn.ejs %>
+                                        <% }%>
+
+    </header>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <h2 class="text-center text-lg-left" style="margin-top: 70px;">Capturando el momento</h2>
+
+        <hr class="mt-2 mb-5">
+
+        <div class="row text-center text-lg-left">
+
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/1560888778025.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190603_210137.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/1564425085750.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190605_142334.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190603_210153.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190603_210204.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190604_102857.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190618_080234.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190618_084454.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190618_171305.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190806_164525.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="/images/galeria/IMG_20190809_072000.jpg" alt="">
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+    <footer>
+        <div class="footer">
+            <img src="/images/anep.jpg" class="rounded" alt="...">
+            <img src="/images/D5F4.tmp.jpg" class="rounded" alt="...">
+            <img src="/images/LOGO IFD chico.png" class="rounded" alt="...">
+            <img src="/images/LOGOANII.png" class="rounded" alt="...">
+            <img src="/images/logo utec.jpg" class="rounded" alt="..."> <br><br><br>
+
+            <span>SÍGUENOS EN</span><br><br>
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-youtube"></i><br><br><br><br>
+
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licencia Creative Commons Atribución-NoComercial 4.0 Internacional</a>.
+
+        </div>
+        <%include partials/footer.ejs %>
+    </footer>
+</body>
+
+</html>

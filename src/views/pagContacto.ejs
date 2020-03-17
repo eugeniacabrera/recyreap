@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contacto</title>
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+
+    <header>
+        <% if(!isAuthenticated){ %>
+            <%include partials/navigation.ejs%>
+                <% } %>
+                    <% if(isAuthenticated && user.rol=== "Administrador"){ %>
+                        <%include partials/navLogInAdmin.ejs%>
+                            <% } %>
+                                <% if(isAuthenticated && user.rol!== "Administrador"){ %>
+                                    <% include partials/navLogIn.ejs %>
+                                        <% }%>
+    </header>
+
+
+    <div class="container p-5">
+        <div class="row">
+            <div class="col">
+                <div class="card animated flipInY " style="margin-top: 50px; margin-bottom: 20px;">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h3>Contáctanos</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <form action="/contactAction" method="POST" enctype="text/plain">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Enviar mensaje" class='btn btn-dark btn-block'>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer">
+            <img src="/images/anep.jpg" class="rounded" alt="...">
+            <img src="/images/D5F4.tmp.jpg" class="rounded" alt="...">
+            <img src="/images/LOGO IFD chico.png" class="rounded" alt="...">
+            <img src="/images/LOGOANII.png" class="rounded" alt="...">
+            <img src="/images/logo utec.jpg" class="rounded" alt="..."> <br><br><br>
+
+            <span>SÍGUENOS EN</span><br><br>
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-youtube"></i><br><br><br><br>
+
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licencia Creative Commons Atribución-NoComercial 4.0 Internacional</a>.
+
+        </div>
+        <%include partials/footer.ejs %>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrarse</title>
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+    <header>
+        <% include partials/navigation.ejs %>
+    </header>
+
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="card text-center">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h3>Registrarse</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/pagRegistrarse" method="POST">
+                            <div class="form-group">
+                                <input type="text" name='nombre_usuario' placeholder="Nombre de usuario" class='form-control' autofocus required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name='contraseña' placeholder="Contraseña" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name='nombre_completo' placeholder="Nombre completo" class='form-control' required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name='email' placeholder="Email" class='form-control' required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name='pais' placeholder="Pais" class='form-control' required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name='ciudad' placeholder="Ciudad" class='form-control' required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name='lugar_trabajo' placeholder="Lugar de trabajo" class='form-control' required>
+                            </div>
+                            <div class="form-group">
+                                <select id="Puesto de trabajo" name="puesto_trabajo" class="form-control" required>
+                                    <option selected disabled>Elige un puesto de trabajo</option>
+                                    <option>Docente</option>
+                                    <option>Funcionario de gestión</option>
+                                    <option>Estudiante</option>
+                                    <option>Investigador</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="Rol" name="rol" class="form-control" required>
+                                    <option selected disabled>Elige un rol</option>
+                                    <option>Usuario</option>
+                                    <option>Administrador</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Registrarse" class='btn btn-dark btn-block'>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <%include partials/footer.ejs %>
+    </footer>
+
+</body>
+
+</html>

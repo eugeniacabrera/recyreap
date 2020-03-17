@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administración</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+    <header>
+    
+    
+        <div class="navbar navbar-expand-lg navbar-light bg-light" role="group" aria-label="Basic example">
+            <a class="nav-link" href="/homeLogIn" role="button"><i class="fas fa-arrow-left"></i> Sitio</a>
+            <a class="nav-link" href="/admin/adminUsuarios" role="button">Usuarios</a>
+            <a class="nav-link" href="/admin/adminNoticias" role="button">Noticias</a>
+            <a class="nav-link" href="/admin/adminRecursos" role="button">Recursos</a>
+            <a class="nav-link" href="/admin/adminTipoUF" role="button">Tipo UF</a>
+        </div>
+    </header>
+
+    <h2 >Recursos</h2>
+
+    <div class="container">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-7">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <td>Título</td>
+                                <td>Tipo UF</td>
+                                <td>Asignatura</td>
+                                <td>Acciones</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (data) { %>
+                            <% for(var i = 0; i < data.length; i++) { %>
+        
+                            <tr>
+                                <td><%= data[i].titulo %></td>
+                                <td><%= data[i].idTipoUF %></td>
+                                <td><%= data[i].asignatura %></td>
+                                <td>
+                                    <a href="/admin/eliminarRecursos/<%=data[i].idRecurso%>" class="btn btn-danger">Eliminar</a>
+                                    <a href="/admin/editarRecursos/<%=data[i].idRecurso%>" class="btn btn-info">Editar</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/admin/agregarRecursos" method="POST">
+                                <div class="form-group">
+                                    <select id="idTipoUF" name="tipoUF" class="form-control" required>
+                                        <option selected disabled>Unidad fílmica</option>
+                                        <option value="1">Trabajo grupal</option>
+                                        <option value="2">Uso de Recursos</option>
+                                        <option value="3">Toma de decisiones</option>
+                                        <option value="4">Clase completa</option>
+                                        <option value="5">Salidas de campo y actividades prácticas</option>
+                                        <option value="6">Microclases</option>
+                                        <option value="7">Auto-observación</option>
+                                        <option value="8">Otros</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='titulo' placeholder="Título"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='duracion' placeholder="Duración"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='descripcion' placeholder="Descripción" class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='asignatura' placeholder="Asignatura"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='fechaPub' placeholder="aaaa-mm-dd"
+                                        class='form-control' autofocus required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='localidad' placeholder="Localidad" class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='institucion' placeholder="Institución" class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='nivelTurnoEdades' placeholder="Nivel, turno y rango de edad de los estudiantes"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='cantEstudiantes' placeholder="Cantidad de estudiantes"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='nombreDocente' placeholder="Nombre de o de los/las docentes"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='acercaDocente' placeholder="Descripción docente/s"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='protocolosSugeridos' placeholder="Protocolos sugeridos"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='otrosDatos' placeholder="Otros datos"
+                                        class='form-control' required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='url' placeholder="URL recurso"
+                                        class="form-control" required>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <input type="submit" value="Registrar recurso" class='btn btn-primary btn-block'>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <%include partials/footer.ejs %>
+    </footer>
+</body>
+
+</html>

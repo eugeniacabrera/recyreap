@@ -1,0 +1,451 @@
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
+}
+
+.footer {
+    background-color: black;
+    height: auto;
+    text-align: center;
+    color: white;
+}
+
+img.rounded {
+    padding: 1em;
+}
+
+.centrado {
+    margin: 10px auto;
+    display: block;
+}
+
+.container-fluid {
+    margin-top: 85.97px;
+    height: 80%;
+    width: 100%;
+}
+
+.quienesSomos {
+    background-color: white;
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+
+/* BOTONES SOCIALES */
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+i.fa.fa-facebook {
+    font-size: 40px;
+    margin: 10px;
+}
+
+.fa-facebook {
+    background-color: none;
+}
+
+i.fa.fa-youtube {
+    font-size: 40px;
+    margin: 10px;
+}
+
+
+/* ------------ fin botones sociales ------ */
+
+.wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+.content {
+    padding-bottom: 100px;
+    /* Altura del footer */
+}
+
+.navbar {
+    font-size: 15px;
+    box-shadow: 0px 3px 4px -1px rgba(0, 0, 0, 0.75);
+    position: fixed;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #dd3333;
+}
+
+.imgPortada {
+    position: relative;
+    width: 100%;
+}
+
+.texto-encima {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.titulo {
+    color: white;
+    position: absolute;
+    font-size: 55%;
+    top: 190px;
+    height: auto;
+    width: 75%;
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+
+.botonesPortada {
+    position: absolute;
+    top: 230px;
+}
+
+
+/* REC y REAP / GRABAR y COSECHAR  ROTACIÓN*/
+
+.listado {
+    font-size: 1.1em;
+    width: 100%;
+    text-shadow: 2px 2px black;
+}
+
+.palabras span {
+    display: inline;
+    position: absolute;
+    top: 150px;
+    opacity: 0;
+    overflow: hidden;
+    /* Definimos el tipo de animacion y la duración de la misma
+          La duración de la misma es la suma de todos los tiempos de cada
+          una de las palabras
+         */
+    -webkit-animation: rotateWord 8s linear infinite 0s;
+    -ms-animation: rotateWord 8s linear infinite 0s;
+    animation: rotateWord 8s linear infinite 0s;
+}
+
+
+/* Definimos el tipo para mostrar cada uno de los textos */
+
+.palabras span:nth-child(1) {
+    color: white;
+}
+
+.palabras span:nth-child(2) {
+    /* Definimos el segundo que deseamos que aparezca */
+    -webkit-animation-delay: 4s;
+    -ms-animation-delay: 4s;
+    animation-delay: 4s;
+    /* especifica el tiempo de retardo que debe transcurrir antes de comenzar la animación*/
+    color: white;
+}
+
+
+/* El estilo keyframes define el tipo de animación */
+
+@-webkit-keyframes rotateWord {
+    0% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 0;
+        -webkit-transform: translateY(-30px);
+    }
+    5% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
+    17% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
+    20% {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes rotateWord {
+    0% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 0;
+        -ms-transform: translateY(-30px);
+    }
+    5% {
+        opacity: 1;
+        -ms-transform: translateY(0px);
+    }
+    17% {
+        opacity: 1;
+        -ms-transform: translateY(0px);
+    }
+    20% {
+        opacity: 0;
+        -ms-transform: translateY(30px);
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotateWord {
+    0% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 0;
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    5% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    17% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    20% {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* -------------------- REC REAP GRABAR COSECHAR ROTACIÓN  ---------------------- */
+
+#recyreap {
+    padding-left: 110px;
+}
+
+#grabarcosechar {
+    padding-left: 65px;
+}
+
+.botonesPortada {
+    top: 225px;
+}
+
+#seccionNoticias {
+    margin-top: 30px;
+}
+
+.card-deck {
+    margin-top: 10px;
+    margin-left: 61px;
+}
+
+.noticias {
+    height: 150px;
+}
+
+
+/*    SCROLLBAR     */
+
+.comienzoDescripcion {
+    height: 300px;
+    position: relative;
+    overflow: auto;
+}
+
+
+/* Control the position of the "outside" scrollbar */
+
+.mCSB_outside+.mCSB_scrollTools {
+    right: -35px;
+}
+
+
+/*   --------------           scrollbar         ---------          */
+
+.conoceElEquipo {
+    background-color: #bbbcbe;
+    margin-top: 87px;
+}
+
+@media only screen and (min-width: 1040px) {
+    /* LAPTOP L*/
+    .listado {
+        font-size: 4em;
+        width: 70%;
+        text-shadow: 4px 4px black;
+    }
+    .palabras span {
+        top: 300px;
+    }
+    #recyreap {
+        padding-left: 300px;
+    }
+    #grabarcosechar {
+        padding-left: 150px;
+    }
+    .titulo {
+        font-size: 200%;
+        top: 450px;
+        text-shadow: 3px 3px black;
+    }
+    .botonesPortada {
+        top: 600px;
+    }
+    .botonesPortada .btn-sm {
+        font-size: 1.8rem;
+        width: 210px;
+        height: 55px;
+    }
+    #tituloActividades {
+        margin-top: 60px;
+    }
+    #textoQuienesSomos p {
+        font-size: larger;
+    }
+    .card-header h5 {
+        font-size: x-large;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1039px) {
+    /* LAPTOP */
+    .listado {
+        font-size: 3.5em;
+        width: 70%;
+        text-shadow: 4px 4px black;
+    }
+    .palabras span {
+        top: 300px;
+    }
+    #recyreap {
+        padding-left: 170px;
+    }
+    #grabarcosechar {
+        padding-left: 50px;
+    }
+    .titulo {
+        font-size: 170%;
+        top: 450px;
+    }
+    .botonesPortada {
+        top: 600px;
+    }
+    .botonesPortada .btn-sm {
+        font-size: 1.8rem;
+        width: 210px;
+        height: 55px;
+    }
+    #tituloActividades {
+        margin-top: 60px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /*tablet - 768px */
+    .listado {
+        font-size: 3em;
+        width: 70%;
+        text-shadow: 4px 4px black;
+    }
+    .palabras span {
+        display: inline;
+        position: absolute;
+        top: 230px;
+    }
+    #recyreap {
+        padding-left: 120px;
+    }
+    #grabarcosechar {
+        padding-left: 15px;
+    }
+    .titulo {
+        font-size: 150%;
+        top: 340px;
+        text-shadow: 1px 1px black;
+    }
+    .botonesPortada {
+        top: 460px;
+    }
+    .botonesPortada .btn-sm {
+        justify-content: center;
+        font-size: 1.5rem;
+        width: 150px;
+        height: 50px;
+    }
+    #tituloActividades {
+        margin-top: 40px;
+    }
+    .card-deck {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+    /* MOBILE L - 425px */
+    .listado {
+        font-size: 1.8em;
+        width: 70%;
+        text-shadow: 4px 4px black;
+    }
+    #recyreap {
+        padding-left: 65px;
+    }
+    #grabarcosechar {
+        padding-left: -8px;
+    }
+    .titulo {
+        font-size: 90%;
+        top: 230px;
+    }
+    .botonesPortada {
+        top: 290px;
+    }
+    .botonesPortada btn-sm {
+        font-size: 1.0rem;
+        width: 90px;
+        height: 50px;
+    }
+    .palabras span {
+        top: 180px;
+    }
+    #tituloActividades {
+        margin-top: 40px;
+    }
+    .card-deck {
+        margin-top: 10px;
+        margin-left: 70px;
+    }
+}

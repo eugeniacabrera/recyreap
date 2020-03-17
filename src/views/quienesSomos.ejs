@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quienes somos</title>
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+
+    <% if(!isAuthenticated){ %>
+        <%include partials/navigation.ejs%>
+            <% } %>
+                <% if(isAuthenticated && user.rol=== "Administrador"){ %>
+                    <%include partials/navLogInAdmin.ejs%>
+                        <% } %>
+                            <% if(isAuthenticated && user.rol !== "Administrador"){ %>
+                                <% include partials/navLogIn.ejs %>
+                                    <% }%>
+
+                                        <!-- Header -->
+                                        <header class="conoceElEquipo text-center py-5 mb-4">
+                                            <div class="container">
+                                                <h3 class="font-weight-light text-black">Conoce el equipo</h3>
+                                            </div>
+                                        </header>
+
+                                        <!-- Page Content -->
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- Team Member 1 -->
+                                                <div class="col-lg-3 col-md-4 col-6">
+                                                    <div class="card border-0 shadow">
+                                                        <img src="/images/silvia.jpg" class="card-img-top " alt="...">
+                                                        <div class="card-body text-center">
+                                                            <p class="card-title mb-0" style="font-size: small;">SILVIA UMPIÉRREZ</p>
+                                                            <div class="card-text text-black-50" style="font-size: small;">Responsable Técnico - Científico</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Team Member 2 -->
+                                                <div class="col-lg-3 col-md-4 col-6">
+                                                    <div class="card border-0 shadow">
+                                                        <img src="/images/delma.jpg" class="card-img-top " alt="...">
+                                                        <div class="card-body text-center">
+                                                            <p class="card-title mb-0" style="font-size: small;">DELMA CABRERA</p>
+                                                            <div class="card-text text-black-50" style="font-size: small;">Investigador</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Team Member 3 -->
+                                                <div class="col-lg-3 col-md-4 col-6">
+                                                    <div class=" card border-0 shadow ">
+                                                        <img src="/images/paola.jpg " class="card-img-top " alt="... ">
+                                                        <div class="card-body text-center ">
+                                                            <p class="card-title mb-0" style="font-size: small;">PAOLA BRUCCOLERI</p>
+                                                            <div class="card-text text-black-50 " style="font-size: small;">Técnico de apoyo</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Team Member 4 -->
+                                                <div class="col-lg-3 col-md-4 col-6">
+                                                    <div class="card border-0 shadow ">
+                                                        <img src="/images/kuki.jpg " class="card-img-top" alt="... ">
+                                                        <div class="card-body text-center ">
+                                                            <p class="card-title mb-0" style="font-size: small;">EUGENIA CABRERA</p>
+                                                            <div class="card-text text-black-50 " style="font-size: small;">Técnico de apoyo</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.row -->
+
+                                        </div>
+
+                                        <!-- /.container -->
+                                        <div class="card text-justify text-black mx-auto w-75 quienesSomos ">
+                                            <div class="card-body ">
+                                                <div class="card-header text-center border-light font-weight-light ">
+                                                    <h5>Quienes somos</h5>
+                                                </div>
+                                                <div id="textoQuienesSomos" class="card-text " style="font-size: small; ">
+                                                    <p>Breve currículo de las autoras</p>
+
+                                                    <p>Paola Bruccoleri es Analista Programadora egresada de la UDELAR; ha realizado especializaciones y cursos relacionados con las tecnologías digitales y la educación. Es Docente Orientadora en Tecnologías
+                                                        y docente de Informática del Instituto de Formación Docente de San José.</p>
+
+                                                    <p>Silvia Umpiérrez es Licenciada en Biología por la UDELAR, Doctora en Educación por la ORT, tiene antecedentes en investigación en el área de educación y ha realizado publicaciones en revistas indexadas.
+                                                        Participó en la compilación del libro,”Las tecnologías de la información, aprendizaje y comunicación en la enseñanza terciaria y la investigación educativa “(CFE, 2013). En 2016 participó del equipo
+                                                        técnico de la investigación ANII: “Educadores en la era digital: aprender a enseñar con tecnologías en la formación inicial de profesores de educación media en Uruguay”. Es Directora del Instituto
+                                                        de Formación Docente de San José y docente efectiva en CFE.</p>
+
+                                                    <p>Delma Cabrera es profesora de Biología, Magíster en Enseñanza de las Ciencias en Educación Media por CLAEH y en Educación, Sociedad y Política por FLACSO. Es referente local de la modalidad semipresencial
+                                                        de profesorado y docente en el CFE y CES.</p>
+
+                                                    <p>Eugenia Cabrera es estudiante de la carrera de tecnólogo en informática y sus tareas se enmarcan en la pasantía laboral obligatoria para obtener el título de Tecnólogo en Informática.</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <footer>
+                                            <div class="footer ">
+                                                <img src="/images/anep.jpg " class="rounded " alt="... ">
+                                                <img src="/images/D5F4.tmp.jpg " class="rounded " alt="... ">
+                                                <img src="/images/LOGO IFD chico.png " class="rounded " alt="... ">
+                                                <img src="/images/LOGOANII.png " class="rounded " alt="... ">
+                                                <img src="/images/logo utec.jpg " class="rounded " alt="... "> <br><br><br>
+
+                                                <span>SÍGUENOS EN</span><br><br>
+                                                <i class="fa fa-facebook "></i>
+                                                <i class="fa fa-youtube "></i><br><br><br><br>
+
+                                                <a rel="license " href="http://creativecommons.org/licenses/by-nc/4.0/ "><img alt="Licencia Creative Commons " style="border-width:0 " src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png
+                " /></a><br />Esta obra está bajo una <a rel="license " href="http://creativecommons.org/licenses/by-nc/4.0/ ">Licencia Creative Commons Atribución-NoComercial 4.0 Internacional</a>.
+
+                                            </div>
+                                            <%include partials/footer.ejs %>
+                                        </footer>
+</body>
+
+</html>

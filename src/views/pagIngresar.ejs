@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ingresar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+
+    <header>
+        <% include partials/navigation.ejs %>
+    </header>
+
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card animated flipInY">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h3>Ingresar</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/pagIngresar" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name='username' placeholder="Nombre de usuario">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name='password' rows="10" placeholder="Contraseña"></input>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-dark btn-block">Iniciar sesión</button>
+                            </div>
+                        </form>
+                        <p>
+                            <br>¿Aún no estás registrado? <a href="/pagRegistrarse" id="register-form-link" class="text-black">Registrate</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer>
+    <div class="footer">
+        <img src="/images/anep.jpg" class="rounded" alt="...">
+        <img src="/images/D5F4.tmp.jpg" class="rounded" alt="...">
+        <img src="/images/LOGO IFD chico.png" class="rounded" alt="...">
+        <img src="/images/LOGOANII.png" class="rounded" alt="...">
+        <img src="/images/logo utec.jpg" class="rounded" alt="..."> <br><br><br>
+
+        <span>SÍGUENOS EN</span><br><br>
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-youtube"></i><br><br><br><br>
+
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licencia Creative Commons Atribución-NoComercial 4.0 Internacional</a>.
+
+    </div>
+    <%include partials/footer.ejs %>
+</footer>
+
+</html>

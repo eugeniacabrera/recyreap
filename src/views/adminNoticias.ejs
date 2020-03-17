@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administración</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-expand-lg navbar-light bg-light" role="group" aria-label="Basic example">
+            <a class="nav-link" href="/" role="button"><i class="fas fa-arrow-left"></i> Sitio</a>
+        </div>
+    </header>
+
+    <h2>Noticias</h2>
+
+    <div class="container">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-7">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <td>Título</td>
+                                <td>Fecha publicada</td>
+                                <td>Acciones</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (data) { %>
+                                <% for(var i = 0; i < data.length; i++) { %>
+                                    <tr>
+                                        <td>
+                                            <%= data[i].titulo %>
+                                        </td>
+                                        <td>
+                                            <%= data[i].fechaPub.getDate() + "/" + (data[i].fechaPub.getMonth() +1) + "/" + data[i].fechaPub.getFullYear() %>
+                                        </td>
+                                        <td>
+                                            <a href="/admin/eliminarNoticias/<%=data[i].idNoticia%>" class="btn btn-danger">Eliminar</a>
+                                            <a href="/admin/editarNoticias/<%=data[i].idNoticia%>" class="btn btn-info">Editar</a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/admin/agregarNoticias" method="POST">
+
+                                <div class="form-group">
+                                    <input type="text" name='titulo' placeholder="Título noticia" class='form-control' autofocus required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name='contenido' placeholder="Contenido" class="form-control" autofocus required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name='imagen' placeholder="Imagen url: /images/noticias/URL-IMAGEN" class="form-control" autofocus>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Registrar noticia" class='btn btn-primary btn-block'>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <%include partials/footer.ejs %>
+    </footer>
+</body>
+
+</html>
