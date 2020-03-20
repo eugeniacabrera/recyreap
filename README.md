@@ -3,9 +3,11 @@
 
 ## Introducción
 
-Este repositorio contiene un sitio web creado con la tecnología Node.js .
+Este repositorio contiene un sitio web dinámico creado con la tecnología Node.js.
+Utiliza eL sistema de gestión de bases de datos MySQL.
 El sitio se basa en la información del proyecto "Rec y Reap" del Instituto Formación Docente San José
-y en los recursos obtenidos gracias a la investigación que propone el mismo. 
+y en los recursos obtenidos gracias a la investigación que propone este proyecto.
+Cuenta con una administración intuitiva y amigable para realizar los CRUD en la base de datos, la cual se accede mediante la ruta http://localhost:3000/admin/adminNoticias .
 
 ## Construido con 🛠️
 * Node.js - sitio oficial[https://nodejs.org/es/](https://nodejs.org/es/)
