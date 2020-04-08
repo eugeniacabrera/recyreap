@@ -3,17 +3,21 @@
 
 ## Introducción
 
-Este repositorio contiene un sitio web dinámico creado con la tecnología Node.js.
-Utiliza eL sistema de gestión de bases de datos MySQL.
-El sitio se basa en la información del proyecto "Rec y Reap" del Instituto Formación Docente San José
-y en los recursos obtenidos gracias a la investigación que propone este proyecto.
-Cuenta con una administración intuitiva y amigable para realizar los CRUD en la base de datos, la cual se accede mediante la ruta http://localhost:3000/admin/adminNoticias .
+Este repositorio contiene los fuentes de un sitio web dinámico creado para el proyecto "Rec y Reap" del Instituto Formación Docente San José, Uruguay.
 
-## Construido con 🛠️
+Fue construido con la tecnología Node.js y utiliza el sistema de gestión de bases de datos MySQL.
+
+El sitio tenía como requerimientos un módulo de noticias por tanto cuenta con una administración intuitiva y amigable para realizar los CRUD correspondientes en la base de datos. A la administración de las mismas se accede mediante la ruta http://localhost:3000/admin/adminNoticias .
+
+## Herramientas: 🛠️
 * Node.js - sitio oficial[https://nodejs.org/es/](https://nodejs.org/es/)
 * Express.js - sitio oficial [https://expressjs.com/es/](https://expressjs.com/es/)
+*MySql versión 8.0.16
 
-## Desplegar
+## Despliegue:
+* Instalar las herramientas
+* Clonar el repositorio
+
 El procedimiento para que puedas ver en funcionamiento el sitio web, después de haberlo clonado en tu equipo es:
 
 * Entrar al directorio del proyecto. 
